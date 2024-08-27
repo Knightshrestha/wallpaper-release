@@ -63,8 +63,11 @@ const chunksDir = join('.', 'final'); // Directory where the chunks are stored
 const outputFile = join(temp, 'merged_output.zip'); // Path for the merged output file
 
 mergeFiles(chunksDir, outputFile)
-	.then(async () => {
-		await extractZip(outputFile, join('.'));
+	.then(() => {
+		extractZip(outputFile, join('.'))
+		.then(() => {console.log("SuccessFul")})
+		.catch((err) => {
+			console.error('Zip Error', err)
+		});
 	})
-
 	.catch((err) => console.error('Error merging files:', err));

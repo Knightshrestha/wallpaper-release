@@ -6,7 +6,6 @@ import {
 	existsSync,
 } from 'fs';
 import { join } from 'path';
-import { extract } from 'zip-lib';
 
 const temp = join('.', 'temp');
 if (!existsSync(temp)) {
@@ -50,21 +49,9 @@ async function appendChunk(chunkFilePath, output) {
 	});
 }
 
-async function extractZip(zipFilePath, outputDir) {
-	if (!existsSync(outputDir)) {
-		mkdirSync(outputDir);
-	}
-	try {
-		await extract(zipFilePath, outputDir);
-		console.log('Extract Successful');
-	} catch (error) {
-		console.error(error);
-	}
-}
+
 
 const chunksDir = join('.', 'final'); // Directory where the chunks are stored
 const outputFile = join(temp, 'merged_output.zip'); // Path for the merged output file
 
 await mergeFiles(chunksDir, outputFile)
-
-await extractZip(outputFile, join(".", "output"))

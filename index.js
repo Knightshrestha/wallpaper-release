@@ -6,7 +6,6 @@ import {
 	existsSync,
 } from 'fs';
 import { join } from 'path';
-import unzipper from 'unzipper';
 import { extract } from 'zip-lib';
 
 const temp = join('.', 'temp');

@@ -16,7 +16,7 @@ jobs:
         with:
           webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
           color: "2105893"
-          username: "Envoy for discord"
+          username: "Envoy for Github"
           avatar_url: "https://i.pximg.net/img-original/img/2024/08/27/15/26/03/121880036_p0.jpg"
           content: "New Release"
           footer_title: "Changelog"

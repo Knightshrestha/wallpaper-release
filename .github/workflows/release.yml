@@ -97,7 +97,7 @@ jobs:
             output/release-universal-v${{ env.VERSION_TAG }}.apk
             output/release-arm64-v8a-v${{ env.VERSION_TAG }}.apk
             output/release-x86_64-v${{ env.VERSION_TAG }}.apk
-            output/release-universal-v${{ env.VERSION_TAG }}.apk
+            output/release-armeabi-v7a-v${{ env.VERSION_TAG }}.apk
 
           draft: true
           prerelease: false

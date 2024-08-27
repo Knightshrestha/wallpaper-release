@@ -59,6 +59,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.VERSION_TAG }}
+          fail_on_unmatched_files: true
           name: My Wallpapers ${{ env.VERSION_TAG }}
           body: |
             ---

@@ -52,18 +52,19 @@ async function appendChunk(chunkFilePath, output) {
 
 async function extractZip(zipFilePath, outputDir) {
 	try {
-		await extract(zipFilePath, outputDir)
-		console.log("Extract Successful")
+		await extract(zipFilePath, outputDir);
+		console.log('Extract Successful');
 	} catch (error) {
-		console.error(error)
-		
+		console.error(error);
 	}
 }
 
 const chunksDir = join('.', 'final'); // Directory where the chunks are stored
 const outputFile = join(temp, 'merged_output.zip'); // Path for the merged output file
 
-await mergeFiles(chunksDir, outputFile).catch((err) =>
-	console.error('Error merging files:', err)
-);
-await extractZip(outputFile, join('.'));
+mergeFiles(chunksDir, outputFile)
+	.then(async () => {
+		await extractZip(outputFile, join('.'));
+	})
+
+	.catch((err) => console.error('Error merging files:', err));

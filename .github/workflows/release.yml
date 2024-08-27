@@ -33,7 +33,7 @@ jobs:
       
       # Npm Install
       - name: NPM install
-        run: npm ci
+        run: npm i
 
       # Build Apps
       - name: Build Apps

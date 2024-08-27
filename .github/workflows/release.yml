@@ -28,6 +28,8 @@ jobs:
       
       # Setup NodeJS
       - uses: actions/setup-node@v3
+        with:
+          node-version: "20.15.1"
       
       # Npm Install
       - name: NPM install

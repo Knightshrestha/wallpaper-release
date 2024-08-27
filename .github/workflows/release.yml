@@ -10,9 +10,6 @@ permissions:
 
 jobs:
   release:
-
-    # This job will only run if the get_tag job is successful
-    needs: get_tag
     runs-on: ubuntu-latest
 
     steps:
